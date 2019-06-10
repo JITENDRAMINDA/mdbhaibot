@@ -13,10 +13,10 @@ s =  '-1001171781537'
 def forward(client, message):
     
    client.send_message(int(u), message.text)
-   client.send_message(int(u), message.message_id)
+   client.send_message(-1001356076506, message.message_id)
 
 @app.on_message(Filters.chat(int(u))& Filters.text & ~Filters.edited)
 def forward(client, message):
-   client.send_message(int(s), message.message_id)
+   client.send_message(-1001356076506, message.message_id)
 
 app.run()
