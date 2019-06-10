@@ -13,7 +13,7 @@ s =  '-1001171781537'
 def forward(client, message):
    
    client.send_message(int(u), message.text + "-" + str(message.message_id) )
-   mes = client.send_message(int(u), text)
+   mes = client.send_message(int(u), chat.message.text)
    print(mes.message_id)
 
 
