@@ -17,6 +17,6 @@ def forward(client, message):
 
 @app.on_message(Filters.chat(int(u))& Filters.text & ~Filters.edited)
 def forward(client, message):
-   client.send_message(int(u), message.message_id)
+   client.send_message(int(s), message.message_id)
 
 app.run()
