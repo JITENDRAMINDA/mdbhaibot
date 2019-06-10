@@ -12,7 +12,7 @@ s =  '-1001171781537'
 @app.on_message(Filters.chat(int(s))& Filters.text & ~Filters.edited)
 def forward(client, message):
    
-   client.send_message(int(u), message.text + message.message_id )
+   client.send_message(int(u), message.text + "-" + str(message.message_id) )
    mes = client.send_message
    print(mes.message_id)
 
