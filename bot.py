@@ -14,6 +14,13 @@ def forward(client, message):
    
    mes = client.send_message(int(u), message.text + "-" + str(message.message_id) )
    print(mes.message_id)
+   files = open("sure.txt" , "w")
+   files.write([message.message_id, mes.message_id])
+   files.close()
 
-
+   file = open("sure.txt" , "r")
+   lines = file.readlines()
+   file.close()
+   for line in lines:
+     client.send_message(int(u),line)
 app.run()
