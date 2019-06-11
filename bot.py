@@ -28,8 +28,10 @@ def forward(client, message):
   lines = file.readlines()
   file.close()
   for line in lines:
+   x = line.split()
+   print(x)
    id = str(message.message_id)
-   if id in line:
+   if id in x:
     print(line.split(id))
 
 app.run()
