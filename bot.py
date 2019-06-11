@@ -35,7 +35,7 @@ def forward(client, message):
 
 
 @app.on_deleted_messages(Filters.chat(int(s)))
-def delete(client, message):
+def delete(client, messages):
   print(messages)
   file = open("sure.txt" , "r")
   lines = file.readlines()
