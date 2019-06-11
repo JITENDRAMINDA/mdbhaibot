@@ -34,7 +34,7 @@ def forward(client, message):
   
 
 
-@on_deleted_messages(int(s))
+@app.on_deleted_messages(int(s))
 def forward(client, message):
   file = open("sure.txt" , "r")
   lines = file.readlines()
