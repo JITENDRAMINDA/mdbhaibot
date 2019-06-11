@@ -34,7 +34,7 @@ def forward(client, message):
   
 
 
-@app.on_message(int(s))& Filters.text & Filters.edited)
+@app.on_message(int(s) & Filters.text & Filters.edited)
 def forward(client, message):
   file = open("sure.txt" , "r")
   lines = file.readlines()
