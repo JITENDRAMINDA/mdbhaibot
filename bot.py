@@ -31,8 +31,8 @@ def forward(client, message):
    x = line.split()
    id = str(message.message_id)
    if id in x:
-    print(x[x.index(id)+1])
-   
+
+    client.edit_message_text(int(u),int(x[x.index(id)+1]), message.text)
   
 
 
