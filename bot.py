@@ -31,6 +31,6 @@ def forward(client, message):
    x = line.split()
    id = str(message.message_id)
    if id in x:
-    print('match')
+    print(x[index(id)+1])
 
 app.run()
