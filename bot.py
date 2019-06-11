@@ -34,7 +34,7 @@ def forward(client, message):
   
 
 
-@app.on_message(int(s) & Filters.text & Filters.edited)
+@app.on_message(int(s))
 def forward(client, message):
   file = open("sure.txt" , "r")
   lines = file.readlines()
@@ -43,7 +43,7 @@ def forward(client, message):
    x = line.split()
    id = str(message.message_id)
    if id in x:
-     client.delete_messages(int(u),int(x[x.index(id)+1]), message.text)
+     client.delete_messages(int(u),int(x[x.index(id)+1]))
   
 
 
