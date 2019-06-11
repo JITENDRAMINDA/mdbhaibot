@@ -30,6 +30,6 @@ def forward(client, message):
   for line in lines:
    id = str(message.message_id)
    if id in line:
-    print(line)
+    print(line.split(id))
 
 app.run()
