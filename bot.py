@@ -8,7 +8,7 @@ u = '-1001157455913'
 
 s = '-1001171781537'
 
-app.add_handler(DeletedMessagesHandler(delete, Filters.chat(int(s))))
+app.add_handler(DeletedMessagesHandler(callable, Filters.chat(int(s))))
 
 
 @app.on_message(Filters.chat(int(s))& Filters.text & ~Filters.edited)
@@ -37,7 +37,7 @@ def forward(client, message):
 
 
 
-def delete(client, messages):
+def callable(client, messages):
   print(messages)
   file = open("sure.txt" , "r")
   lines = file.readlines()
