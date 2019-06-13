@@ -18,7 +18,7 @@ def forward(client, message):
    
    While time.time() - x < 30:
       client.send_message(int(u), message.text + "-" + str(message.message_id) )
-      print(z)
+      print("z")
       time.sleep(1)
   
        
