@@ -28,10 +28,14 @@ def main(client, message):
   file = open("sure.txt" , "r")
   lines = file.readlines()
   file.close()
+  z = time.time() - int(x)
+  time.sleep(1)
   for line in lines:
-   if time.time() - int(x) == 30:
+   if z < 30:
       client.send_message(int(u), message.text + "-" + str(message.message_id) )
-     
+      print(z)
+      time.sleep(1)
+
          
 
 app.run()
