@@ -1,7 +1,6 @@
 from pyrogram import Client, Filters, DeletedMessagesHandler
 import time
-import telegram.ext
-from telegram.ext import Updater
+ 
 
 TOKAN = "663574960:AAGWfrBnjGYGSczuGHGLG60RVLMp6ebWteM"
 
