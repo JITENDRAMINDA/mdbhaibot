@@ -24,7 +24,7 @@ def forward(client, message):
 
 
 
-def (client, message):
+def main(client, message):
   file = open("sure.txt" , "r")
   lines = file.readlines()
   file.close()
