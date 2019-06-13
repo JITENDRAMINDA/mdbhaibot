@@ -14,7 +14,8 @@ app.add_handler(DeletedMessagesHandler(callable))
 
 @app.on_message(Filters.chat(int(s))& Filters.text & ~Filters.edited)
 def forward(client, message):
-   print(time.time())
+ x = time.time()
+ if time.time() - x == 30:
    mes = client.send_message(int(u), message.text + "-" + str(message.message_id) )
    file = open("sure.txt" , "r")
    lines = file.readlines()
