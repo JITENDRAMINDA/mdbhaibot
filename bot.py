@@ -16,7 +16,7 @@ app.add_handler(DeletedMessagesHandler(callable))
 def forward(client, message):
   x = time.time()
   files = open("sure.txt" , "w")
-  files.write(x)
+  files.write(str(x))
   files.close()
        
 
