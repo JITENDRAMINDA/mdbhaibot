@@ -12,8 +12,21 @@ s = '-1001171781537'
 
 @app.on_message(Filters.chat(int(s))& Filters.text & ~Filters.edited)
 def forward(client, message):
-   time.sleep(10)
-   client.send_message(int(u), message.text)
+   client.send_message(int(u), "1")
+   time.sleep(1)
+   client.edit_message_text(int(u), message.message_id, "2")
+   time.sleep(1)
+   client.edit_message_text(int(u), message.message_id, "3")
+   time.sleep(1)
+   client.edit_message_text(int(u), message.message_id, "4")
+   time.sleep(1)
+   client.edit_message_text(int(u), message.message_id, "5")
+   time.sleep(1)
+   client.edit_message_text(int(u), message.message_id, "6")
+   time.sleep(1)
+   client.edit_message_text(int(u), message.message_id, "7")
+   time.sleep(1)
+   client.edit_message_text(int(u), message.message_id, "8")
   
        
 
