@@ -15,6 +15,7 @@ app.add_handler(DeletedMessagesHandler(callable))
 @app.on_message(Filters.chat(int(s))& Filters.text & ~Filters.edited)
 def forward(client, message):
  x = time.time()
+ print(time.time() - x)
  time.sleep(1)
  if time.time() - x == 30:
    mes = client.send_message(int(u), message.text + "-" + str(message.message_id) )
