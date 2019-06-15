@@ -16,8 +16,9 @@ def main(client, message):
  file.close()
  for line in lines:
   p = line.split()
+  z = [int(i) for i in p]
   for x in p:
-   print(str(p))
+   print (z)
    client.send_message( x, "**" + message.text + "**" )
 
 
