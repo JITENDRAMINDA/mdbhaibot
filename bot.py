@@ -31,7 +31,7 @@ def forward(client, message):
   files = open("sure.txt" , "w") 
   files.write( line + " " + message.text.split(' ')[1] + " " + message.text.split(" ")[2])
   files.close()
-  message.reply("done")
+  message.reply(line)
   print("done")
 
 
