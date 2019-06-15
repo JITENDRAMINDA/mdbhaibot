@@ -16,7 +16,7 @@ def main(client, message):
  file.close()
  for line in lines:
   p = line.split()
-  client.send_message(int(p[str(p)]), "**" + message.text + "**" )
+  client.send_message([int(p)], "**" + message.text + "**" )
 
 
 
