@@ -18,7 +18,7 @@ def main(client, message):
   p = line.split()
   for x in p:
    print(str(p))
-   client.send_message(x , "**" + message.text + "**" )
+   client.send_message( x, "**" + message.text + "**" )
 
 
 
@@ -29,9 +29,9 @@ def forward(client, message):
  file.close()
  for line in lines:
   files = open("sure.txt" , "w") 
-  files.write( line + " " + message.text.split(' ')[1] + " " + message.text.split(" ")[2])
+  files.write( line + " " + message.text.split(' ')[1])
   files.close()
-  message.reply(line + " " + message.text.split(' ')[1] + " " + message.text.split(" ")[2])
+  message.reply(line + " " + message.text.split(' ')[1])
   print("done")
 
 
