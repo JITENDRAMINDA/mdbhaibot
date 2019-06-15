@@ -17,7 +17,7 @@ def main(client, message):
  for line in lines:
   p = line.split()
   for x in p:
-   print(str(x))
+   print(str(p))
    client.send_message(x , "**" + message.text + "**" )
 
 
@@ -32,6 +32,7 @@ def forward(client, message):
   files.write( line + " " + message.text.split(' ')[1] + " " + message.text.split(" ")[2])
   files.close()
   message.reply("done")
+  print("done")
 
 
 
