@@ -6,34 +6,18 @@ TOKAN = "663574960:AAGWfrBnjGYGSczuGHGLG60RVLMp6ebWteM"
 
 app = Client( TOKAN ,605563,"7f2c2d12880400b88764b9b304e14e0b")
 
-u = '-1001157455913'
-s = '-1001171781537'
 
-@app.on_message(Filters.chat(int(s)))
-def main(client, message):
- file = open("sure.txt" , "r")
- lines = file.readlines()
- file.close()
- for line in lines:
-  p = line.split()
-  z = [int(i) for i in p]
-  for x in p:
-   print (z)
-   client.send_message( x, "**" + message.text + "**" )
+@app.on_message(Filters.command('add')& Filters.user(491634139))
+def handle(client, message):
+    global to_chat 
+    to_chat = message.command[2]
+    client.add_handler(MessageHandler(han, Filters.chat(message.command[1]& Filters.text)))
 
 
 
-@app.on_message(Filters.command('add'))
-def forward(client, message):
- file = open("sure.txt" , "r")
- lines = file.readlines()
- file.close()
- for line in lines:
-  files = open("sure.txt" , "w") 
-  files.write( line + " " + message.text.split(' ')[1])
-  files.close()
-  message.reply(line + " " + message.text.split(' ')[1])
-  print("done")
+def han(client, message):
+    global to_chat
+    client.send_message(int(to_chat), message.text)
 
 
 
