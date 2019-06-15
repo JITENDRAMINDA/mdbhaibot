@@ -10,7 +10,7 @@ u = '-1001157455913'
 s = '-1001171781537'
 
 @app.on_message(Filters.channel)
-def main(client, message)
+def main(client, message):
  file = open("sure.txt" , "r")
  lines = file.readlines()
  file.close()
