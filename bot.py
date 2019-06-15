@@ -1,4 +1,4 @@
-from pyrogram import Client, Filters, DeletedMessagesHandler
+from pyrogram import Client, Filters, DeletedMessagesHandler, MessageHandler
 import time
  
 
