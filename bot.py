@@ -33,7 +33,7 @@ def forward(client, message):
    files = open("sure.txt" , "w") 
    files.write(line + " " + message.text.split(' ')[1])
    files.close()
-   message.reply(" 💾 Done, The chat_id - ```" + message.text.split(' ')[1] +" ```🌐 has been added to my database. ✅✅")
+   message.reply(" 💾 Done, The chat_id - ```" + message.text.split(' ')[1] +"```🌐 has been added to my database. ✅✅")
    
 
 @app.on_message(Filters.command('remove'))
@@ -56,7 +56,7 @@ def forward(client, message):
  file = open("sure.txt" , "r")
  u = file.readlines()
  file.close()
- message.reply("List of Chat_ids in my database ```" + u + " ```its can be change.")
+ message.reply("🏘️ List of Chat_ids in my database ```" + u + "```its can be change. ✅✅")
  
  
 @app.on_message(Filters.command('sets'))
@@ -64,6 +64,6 @@ def forward(client, message):
  with open('sue.txt', 'w') as file:
   file.write(message.text.split(' ')[1])
   file.close()
-  message.reply("🌐 Done, Now my source chat - ```" + message.text.split(' ')[1] + " ```i will try to forward messages from this chat. ✅✅")
+  message.reply("🌐 Done, Now my source chat is ```" + message.text.split(' ')[1] + "```. I will try to forward messages from this chat. ✅✅")
 
 app.run()
