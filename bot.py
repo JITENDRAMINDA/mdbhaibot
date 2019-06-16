@@ -47,6 +47,7 @@ def forward(client, message):
   files = open("sure.txt" , "w") 
   files.write( x + " " + message.text.split(' ')[1])
   files.close()
+  print (x)
   
 
 
