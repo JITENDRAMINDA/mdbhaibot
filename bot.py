@@ -56,8 +56,8 @@ def forward(client, message):
 def forward(client, message):
  with open('sue.txt', 'r') as file:
 
- file.write(message.text.split(' ')[1])
- file.close()
- message.reply("Done, Now my source chat - " + message.text.split(' ')[1])
+  file.write(message.text.split(' ')[1])
+  file.close()
+  message.reply("Done, Now my source chat - " + message.text.split(' ')[1])
 
 app.run()
