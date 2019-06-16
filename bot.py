@@ -58,15 +58,13 @@ def forward(client, message):
 def forward(client, message):
  file = open("sure.txt" , "r")
  u = file.readlines()
- for i in u:
-    c = i.split()
-    message.reply(c)
+ file.close()
+ message.reply(c)
  
  
 @app.on_message(Filters.command('sets'))
 def forward(client, message):
  with open('sue.txt', 'w') as file:
-
   file.write(message.text.split(' ')[1])
   file.close()
   message.reply("Done, Now my source chat - " + message.text.split(' ')[1])
