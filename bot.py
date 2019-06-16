@@ -20,7 +20,13 @@ def main(client, message):
     for line in lines:
      p = line.split()
      for x in p:
-      client.send_message( int(x), "**" + message.text + "**" )
+         try:
+         client.send_message( int(x), "**" + message.text + "**" )
+
+
+         except:
+         continue
+  
 
 
 
