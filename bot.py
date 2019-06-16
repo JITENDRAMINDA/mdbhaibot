@@ -48,9 +48,10 @@ def forward(client, message):
  for v in u:
   print(v)
   lines = v.split() 
-  print(lines)
   del lines[lines.index(message.text.split(' ')[1])]
-  for line in lines:
+  y = " ".join(str(x) for x in lines)
+  print (y)
+  for line in y:
    print(line)
    files = open("sure.txt" , "w") 
    files.write(line)
