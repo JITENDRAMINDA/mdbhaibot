@@ -59,7 +59,7 @@ def forward(client, message):
  file = open("sure.txt" , "r")
  u = file.readlines()
  file.close()
- message.reply(c)
+ message.reply(u)
  
  
 @app.on_message(Filters.command('sets'))
