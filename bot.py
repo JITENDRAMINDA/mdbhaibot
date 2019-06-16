@@ -48,9 +48,10 @@ def forward(client, message):
   x = v.split() 
   print(x)
   del x[x.index(message.text.split(' ')[1])]
-  files = open("sure.txt" , "w") 
-  files.write(x)
-  files.close()
+  for g in x:
+   files = open("sure.txt" , "w") 
+   files.write(g)
+   files.close()
  
   
 @app.on_message(Filters.command('sets'))
