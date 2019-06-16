@@ -26,7 +26,7 @@ def main(client, message):
 
 @app.on_message(Filters.command('add'))
 def forward(client, message):
- if len(message.text.split(' ')[1] == 14:
+ if len(message.text.split(' ')[1]) == 14:
   file = open("sure.txt" , "r")
   lines = file.readlines()
   file.close()
@@ -40,7 +40,7 @@ def forward(client, message):
 
 @app.on_message(Filters.command('remove'))
 def forward(client, message):
- if len(message.text.split(' ')[1] == 14:
+ if len(message.text.split(' ')[1]) == 14:
   file = open("sure.txt" , "r")
   u = file.readlines()
   file.close()
@@ -69,7 +69,7 @@ def forward(client, message):
  
 @app.on_message(Filters.command('sets'))
 def forward(client, message):
- if len(message.text.split(' ')[1] == 14:
+ if len(message.text.split(' ')[1]) == 14:
   
    with open('sue.txt', 'w') as file:
     file.write(message.text.split(' ')[1])
