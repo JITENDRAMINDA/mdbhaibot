@@ -54,7 +54,7 @@ def forward(client, message):
   
 @app.on_message(Filters.command('sets'))
 def forward(client, message):
- with open('file.txt', 'r') as file:
+ with open('sue.txt', 'r') as file:
 
  file.write(message.text.split(' ')[1])
  file.close()
