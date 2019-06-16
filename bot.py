@@ -9,7 +9,6 @@ app = Client( TOKAN ,605563,"7f2c2d12880400b88764b9b304e14e0b")
 
 @app.on_message(Filters.channel)
 def main(client, message):
- if message.from_user.id == 491634139:
   file = open("sue.txt" , "r")
   s = file.readlines()
   file.close()
@@ -65,7 +64,16 @@ def forward(client, message):
 def forward(client, message):
 if not message.from_user.id == 491634139:
  message.reply("♻️ You need admins permission to use my functions. ✅✅")
-   
+ 
+
+@app.on_message(Filters.command("start"))
+def forward(client, message):
+if not message.from_user.id == 491634139:
+ message.reply("♻️ Welcome to your LineBot . ✅✅")
+else:
+ message.reply("♻️ You need admins permission to use my functions. ✅✅")
+ 
+  
 @app.on_message(Filters.command('list'))
 def forward(client, message):
  if message.from_user.id == 491634139:
