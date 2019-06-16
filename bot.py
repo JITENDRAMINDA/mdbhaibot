@@ -1,14 +1,11 @@
-from pyrogram import Client, Filters, DeletedMessagesHandler, MessageHandler
+from pyrogram import Client, Filters
 import time
- 
 
 TOKAN = "663574960:AAGWfrBnjGYGSczuGHGLG60RVLMp6ebWteM"
 
 app = Client( TOKAN ,605563,"7f2c2d12880400b88764b9b304e14e0b")
 
 
-u = '-1001157455913'
-s = '-1001171781537'
 
 @app.on_message(Filters.channel)
 def main(client, message):
@@ -22,9 +19,7 @@ def main(client, message):
    file.close()
    for line in lines:
     p = line.split()
-    z = [int(i) for i in p]
     for x in p:
-     print (z)
      client.send_message( int(x), "**" + message.text + "**" )
 
 
