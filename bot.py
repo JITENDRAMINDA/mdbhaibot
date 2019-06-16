@@ -26,6 +26,7 @@ def main(client, message):
 
 @app.on_message(Filters.command('add'))
 def forward(client, message):
+ if len(message.text.split(' ')[1] == 14:
   file = open("sure.txt" , "r")
   lines = file.readlines()
   file.close()
@@ -34,22 +35,28 @@ def forward(client, message):
    files.write(line + " " + message.text.split(' ')[1])
    files.close()
    message.reply("💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been added to my database. ✅✅")
-   
+ else:
+  message.reply("💼 Please write a valid chat id. ✅✅ ")
 
 @app.on_message(Filters.command('remove'))
 def forward(client, message):
- file = open("sure.txt" , "r")
- u = file.readlines()
- file.close()
- for v in u:
-  print(v)
-  lines = v.split() 
-  del lines[lines.index(message.text.split(' ')[1])]
-  y = " ".join(str(x) for x in lines)
-  files = open("sure.txt" , "w") 
-  files.write(y)
-  files.close()
-  message.reply("💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been removed to my database. ✅✅")
+ if len(message.text.split(' ')[1] == 14:
+  file = open("sure.txt" , "r")
+  u = file.readlines()
+  file.close()
+  for v in u:
+   print(v)
+   lines = v.split() 
+   del lines[lines.index(message.text.split(' ')[1])]
+   y = " ".join(str(x) for x in lines)
+   files = open("sure.txt" , "w") 
+   files.write(y)
+   files.close()
+   message.reply("💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been removed to my database. ✅✅")
+ else:
+  message.reply("💼 Please write a valid chat id. ✅✅ ")
+
+
    
 @app.on_message(Filters.command('list'))
 def forward(client, message):
@@ -62,9 +69,14 @@ def forward(client, message):
  
 @app.on_message(Filters.command('sets'))
 def forward(client, message):
- with open('sue.txt', 'w') as file:
-  file.write(message.text.split(' ')[1])
-  file.close()
-  message.reply("🌐 Done, Now my source chat is ```" + message.text.split(' ')[1] + "```. I will try to forward messages from this chat. ✅✅")
+ if len(message.text.split(' ')[1] == 14:
+  
+   with open('sue.txt', 'w') as file:
+    file.write(message.text.split(' ')[1])
+    file.close()
+    message.reply("🌐 Done, Now my source chat is ```" + message.text.split(' ')[1] + "```. I will try to forward messages from this chat. ✅✅")
+ else:
+  message.reply("💼 Please write a valid chat id. ✅✅ ")
+
 
 app.run()
