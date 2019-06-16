@@ -24,7 +24,7 @@ def main(client, message):
 
 
 
-@app.on_message(Filters.command('add'), Filters.user(491634139) )
+@app.on_message(Filters.command('add') & Filters.user(491634139) )
 def forward(client, message):
   if len(message.text.split(' ')[1]) == 14:
    file = open("sure.txt" , "r")
@@ -38,7 +38,7 @@ def forward(client, message):
   else:
    message.reply("💼 Please write a valid chat id. ✅✅ ")
 
-@app.on_message(Filters.command('remove'),Filters.user(491634139))
+@app.on_message(Filters.command('remove') & Filters.user(491634139))
 def forward(client, message):
   if len(message.text.split(' ')[1]) == 14:
    file = open("sure.txt" , "r")
@@ -70,7 +70,7 @@ def forward(client, message):
    message.reply("♻️ You need admins permission to use my functions. ✅✅")
  
   
-@app.on_message(Filters.command('list'),Filters.user(491634139))
+@app.on_message(Filters.command('list') & Filters.user(491634139))
 def forward(client, message):
   file = open("sure.txt" , "r")
   u = file.readlines()
@@ -79,7 +79,7 @@ def forward(client, message):
     message.reply("🏘️ List of Chat_ids in my database are ```" + str(v) + "```. Its can be change. ✅✅")
   
  
-@app.on_message(Filters.command('sets') , Filters.user(491634139) )
+@app.on_message(Filters.command('sets') & Filters.user(491634139) )
 def forward(client, message):
   if len(message.text.split(' ')[1]) == 14:
    with open('sue.txt', 'w') as file:
