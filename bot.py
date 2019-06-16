@@ -62,16 +62,16 @@ def forward(client, message):
 
 @app.on_message(Filters.private)
 def forward(client, message):
-if not message.from_user.id == 491634139:
- message.reply("♻️ You need admins permission to use my functions. ✅✅")
+ if not message.from_user.id == 491634139:
+   message.reply("♻️ You need admins permission to use my functions. ✅✅")
  
 
 @app.on_message(Filters.command("start"))
 def forward(client, message):
-if not message.from_user.id == 491634139:
- message.reply("♻️ Welcome to your LineBot . ✅✅")
-else:
- message.reply("♻️ You need admins permission to use my functions. ✅✅")
+ if not message.from_user.id == 491634139:
+   message.reply("♻️ Welcome to your LineBot . ✅✅")
+ else:
+   message.reply("♻️ You need admins permission to use my functions. ✅✅")
  
   
 @app.on_message(Filters.command('list'))
