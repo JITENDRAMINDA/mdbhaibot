@@ -48,9 +48,9 @@ def forward(client, message):
   x = line.split() 
   del x[x.index(message.text.split(' ')[1])]
   files = open("sure.txt" , "w") 
-  files.write( x + " " + message.text.split(' ')[1])
+  files.write(x)
   files.close()
-  print (x)
+ 
   
 @app.on_message(Filters.command('sets'))
 def forward(client, message):
