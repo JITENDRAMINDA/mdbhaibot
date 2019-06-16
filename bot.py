@@ -52,7 +52,6 @@ def forward(client, message):
   y = " ".join(str(x) for x in lines)
   print (y)
   for line in y:
-   print(line)
    files = open("sure.txt" , "w") 
    files.write(line)
    files.close()
