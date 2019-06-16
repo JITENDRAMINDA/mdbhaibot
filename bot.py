@@ -42,14 +42,15 @@ def forward(client, message):
 @app.on_message(Filters.command('remove'))
 def forward(client, message):
  file = open("sure.txt" , "r")
- v = file.readlines()
+ u = file.readlines()
  file.close()
- x = v.split() 
- print(x)
- del x[x.index(message.text.split(' ')[1])]
- files = open("sure.txt" , "w") 
- files.write(x)
- files.close()
+ for v in u:
+  x = v.split() 
+  print(x)
+  del x[x.index(message.text.split(' ')[1])]
+  files = open("sure.txt" , "w") 
+  files.write(x)
+  files.close()
  
   
 @app.on_message(Filters.command('sets'))
