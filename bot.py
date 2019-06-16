@@ -56,7 +56,7 @@ def forward(client, message):
  file = open("sure.txt" , "r")
  u = file.readlines()
  file.close()
- message.reply(List of Chat_ids in my database ```" + u + " ```its can be change.")
+ message.reply("List of Chat_ids in my database ```" + u + " ```its can be change.")
  
  
 @app.on_message(Filters.command('sets'))
