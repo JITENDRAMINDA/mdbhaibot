@@ -36,6 +36,18 @@ def forward(client, message):
   message.reply(line + " " + message.text.split(' ')[1])
   print("done")
 
+@app.on_message(Filters.command('add'))
+def forward(client, message):
+ file = open("sure.txt" , "r")
+ lines = file.readlines()
+ file.close()
+ for line in lines:
+  x = line.split() 
+  y = x.remove(message.text.split(' ')[1])
+  files = open("sure.txt" , "w") 
+  files.write( y + " " + message.text.split(' ')[1])
+  files.close()
+  
 
 
 app.run()
