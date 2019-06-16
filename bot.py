@@ -50,11 +50,9 @@ def forward(client, message):
   lines = v.split() 
   del lines[lines.index(message.text.split(' ')[1])]
   y = " ".join(str(x) for x in lines)
-  print (y)
-  for line in y:
-   files = open("sure.txt" , "w") 
-   files.write(line)
-   files.close()
+  files = open("sure.txt" , "w") 
+  files.write(y)
+  files.close()
 
 @app.on_message(Filters.command('list'))
 def forward(client, message):
