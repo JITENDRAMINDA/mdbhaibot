@@ -52,8 +52,16 @@ def forward(client, message):
    files = open("sure.txt" , "w") 
    files.write(g)
    files.close()
+
+@app.on_message(Filters.command('list'))
+def forward(client, message):
+ file = open("sure.txt" , "r")
+ u = file.readlines()
+ for i in u:
+    c = i.split()
+    message.reply(c)
  
-  
+ 
 @app.on_message(Filters.command('sets'))
 def forward(client, message):
  with open('sue.txt', 'w') as file:
