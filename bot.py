@@ -30,7 +30,6 @@ def forward(client, message):
   lines = file.readlines()
   file.close()
   for line in lines:
-   print(line)
    files = open("sure.txt" , "w") 
    files.write(line + " " + message.text.split(' ')[1])
    files.close()
