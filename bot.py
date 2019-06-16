@@ -56,7 +56,9 @@ def forward(client, message):
  else:
   message.reply("💼 Please write a valid chat id. ✅✅ ")
 
-
+@app.on_message(Filters.private)
+def forward(client, message):
+ message.reply("♻️ You need admins permission to use my functions. ✅✅")
    
 @app.on_message(Filters.command('list'))
 def forward(client, message):
@@ -70,13 +72,12 @@ def forward(client, message):
 @app.on_message(Filters.command('sets'))
 def forward(client, message):
  if len(message.text.split(' ')[1]) == 14:
-  
    with open('sue.txt', 'w') as file:
     file.write(message.text.split(' ')[1])
     file.close()
     message.reply("🌐 Done, Now my source chat is ```" + message.text.split(' ')[1] + "```. I will try to forward messages from this chat. ✅✅")
  else:
-  message.reply("💼 Please write a valid chat id. ✅✅ ")
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
 
 
 app.run()
