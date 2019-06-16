@@ -24,10 +24,8 @@ def main(client, message):
 
 
 
-@app.on_message(Filters.command('add'))
+@app.on_message(Filters.command('add'), Filters.user(491634139) )
 def forward(client, message):
- if message.from_user.id == 491634139:
-
   if len(message.text.split(' ')[1]) == 14:
    file = open("sure.txt" , "r")
    lines = file.readlines()
@@ -40,10 +38,8 @@ def forward(client, message):
   else:
    message.reply("💼 Please write a valid chat id. ✅✅ ")
 
-@app.on_message(Filters.command('remove'))
+@app.on_message(Filters.command('remove'),Filters.user(491634139))
 def forward(client, message):
- if message.from_user.id == 491634139:
-
   if len(message.text.split(' ')[1]) == 14:
    file = open("sure.txt" , "r")
    u = file.readlines()
@@ -68,16 +64,14 @@ def forward(client, message):
 
 @app.on_message(Filters.command("start"))
 def forward(client, message):
- if not message.from_user.id == 491634139:
+ if message.from_user.id == 491634139:
    message.reply("♻️ Welcome to your LineBot . ✅✅")
  else:
    message.reply("♻️ You need admins permission to use my functions. ✅✅")
  
   
-@app.on_message(Filters.command('list'))
+@app.on_message(Filters.command('list'),Filters.user(491634139))
 def forward(client, message):
- if message.from_user.id == 491634139:
-
   file = open("sure.txt" , "r")
   u = file.readlines()
   file.close()
@@ -85,10 +79,8 @@ def forward(client, message):
     message.reply("🏘️ List of Chat_ids in my database are ```" + str(v) + "```. Its can be change. ✅✅")
   
  
-@app.on_message(Filters.command('sets'))
+@app.on_message(Filters.command('sets') , Filters.user(491634139) )
 def forward(client, message):
- if message.from_user.id == 491634139:
-
   if len(message.text.split(' ')[1]) == 14:
    with open('sue.txt', 'w') as file:
     file.write(message.text.split(' ')[1])
