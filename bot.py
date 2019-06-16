@@ -9,6 +9,9 @@ app = Client( TOKAN ,605563,"7f2c2d12880400b88764b9b304e14e0b")
 
 @app.on_message(Filters.channel)
 def main(client, message):
+
+
+ 
  file = open("sue.txt" , "r")
  s = file.readlines()
  file.close()
@@ -51,7 +54,8 @@ def forward(client, message):
   
 @app.on_message(Filters.command('sets'))
 def forward(client, message):
- file = open("sue.txt" , "r")
+ with open('file.txt', 'r') as file:
+
  file.write(message.text.split(' ')[1])
  file.close()
  message.reply("Done, Now my source chat - " + message.text.split(' ')[1])
