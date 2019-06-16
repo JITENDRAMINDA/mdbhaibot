@@ -57,7 +57,7 @@ def forward(client, message):
  u = file.readlines()
  file.close()
  for v in u :
-   message.reply("🏘️ List of Chat_ids in my database ```" + str(v) + "```its can be change. ✅✅")
+   message.reply("🏘️ List of Chat_ids in my database are ```" + str(v) + "```. Its can be change. ✅✅")
   
  
 @app.on_message(Filters.command('sets'))
