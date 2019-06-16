@@ -46,13 +46,13 @@ def forward(client, message):
  u = file.readlines()
  file.close()
  for v in u:
-  x = v.split() 
+  lines = v.split() 
   print(x)
-  del x[x.index(message.text.split(' ')[1])]
-  for g in x:
-   print(g)
+  del lines[lines.index(message.text.split(' ')[1])]
+  for line in lines:
+   print(line)
    files = open("sure.txt" , "w") 
-   files.write(g)
+   files.write(line)
    files.close()
 
 @app.on_message(Filters.command('list'))
