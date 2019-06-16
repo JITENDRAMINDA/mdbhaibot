@@ -46,6 +46,7 @@ def forward(client, message):
  u = file.readlines()
  file.close()
  for v in u:
+  print(v)
   lines = v.split() 
   print(lines)
   del lines[lines.index(message.text.split(' ')[1])]
