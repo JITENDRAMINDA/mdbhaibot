@@ -42,10 +42,10 @@ def forward(client, message):
 @app.on_message(Filters.command('remove'))
 def forward(client, message):
  file = open("sure.txt" , "r")
- x = file.readlines()
+ v = file.readlines()
  file.close()
- print (x)
-
+ x = v.split() 
+ print(x)
  del x[x.index(message.text.split(' ')[1])]
  files = open("sure.txt" , "w") 
  files.write(x)
