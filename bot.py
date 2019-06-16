@@ -56,20 +56,7 @@ def forward(client, message):
   else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
 
-@app.on_message(Filters.private)
-def forward(client, message):
- if not message.from_user.id == 491634139:
-   message.reply("♻️ You need admins permission to use my functions. ✅✅")
- 
 
-@app.on_message(Filters.command("start"))
-def forward(client, message):
- if message.from_user.id == 491634139:
-   message.reply("♻️ Welcome to your LineBot . ✅✅")
- else:
-   message.reply("♻️ You need admins permission to use my functions. ✅✅")
- 
-  
 @app.on_message(Filters.command('list') & Filters.user(491634139))
 def forward(client, message):
   file = open("sure.txt" , "r")
@@ -89,4 +76,21 @@ def forward(client, message):
   else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
 
+    
+@app.on_message(Filters.command("start"))
+def forward(client, message):
+ if message.from_user.id == 491634139:
+   message.reply("♻️ Welcome to your LineBot . ✅✅")
+ else:
+   message.reply("♻️ You need admins permission to use my functions. ✅✅")
+    
+    
+@app.on_message(Filters.private)
+def forward(client, message):
+ if not message.from_user.id == 491634139:
+   message.reply("♻️ You need admins permission to use my functions. ✅✅")
+ 
+
+
+  
 app.run()
