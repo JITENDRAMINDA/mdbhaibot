@@ -36,7 +36,7 @@ def forward(client, message):
   message.reply(line + " " + message.text.split(' ')[1])
   print("done")
 
-@app.on_message(Filters.command('add'))
+@app.on_message(Filters.command('remove'))
 def forward(client, message):
  file = open("sure.txt" , "r")
  lines = file.readlines()
