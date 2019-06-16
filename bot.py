@@ -44,7 +44,7 @@ def forward(client, message):
  file = open("sure.txt" , "r")
  x = file.readlines()
  file.close()
-
+ print (x)
 
  del x[x.index(message.text.split(' ')[1])]
  files = open("sure.txt" , "w") 
