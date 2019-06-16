@@ -33,7 +33,7 @@ def forward(client, message):
    files = open("sure.txt" , "w") 
    files.write(line + " " + message.text.split(' ')[1])
    files.close()
-   message.reply(" 💾 Done, The chat_id - ```" + message.text.split(' ')[1] +"```🌐 has been added to my database. ✅✅")
+   message.reply(" 💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been added to my database. ✅✅")
    
 
 @app.on_message(Filters.command('remove'))
@@ -49,7 +49,7 @@ def forward(client, message):
   files = open("sure.txt" , "w") 
   files.write(y)
   files.close()
-  message.reply(" 💾 Done, The chat_id - ```" + message.text.split(' ')[1] +"```🌐 has been removed to my database. ✅✅")
+  message.reply(" 💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been removed to my database. ✅✅")
    
 @app.on_message(Filters.command('list'))
 def forward(client, message):
