@@ -1,7 +1,7 @@
 from pyrogram import Client, Filters
 import time
 
-TOKAN = "663574960:AAGWfrBnjGYGSczuGHGLG60RVLMp6ebWteM"
+TOKAN = "639957559:AAFbwAStH_GXBgUVFxC93CCsbBM5MSA-Piw"
 
 app = Client( TOKAN ,605563,"7f2c2d12880400b88764b9b304e14e0b")
 
