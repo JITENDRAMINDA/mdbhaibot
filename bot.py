@@ -49,6 +49,7 @@ def forward(client, message):
   print(x)
   del x[x.index(message.text.split(' ')[1])]
   for g in x:
+   print(g)
    files = open("sure.txt" , "w") 
    files.write(g)
    files.close()
