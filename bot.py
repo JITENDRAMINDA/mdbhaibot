@@ -36,10 +36,10 @@ def forward(client, message):
   file.close()
   for line in lines:
    files = open("sure.txt" , "w") 
-   files.write( line + " " + message.text.split(' ')[1])
+   files.write(line + " " + message.text.split(' ')[1])
    files.close()
    message.reply(line + " " + message.text.split(' ')[1])
-   print("done")
+   
 
 @app.on_message(Filters.command('remove'))
 def forward(client, message):
@@ -59,5 +59,6 @@ def forward(client, message):
  file = open("sue.txt" , "r")
  file.write(message.text.split(' ')[1])
  file.close()
+ message.reply("Done, Now my source chat - " + message.text.split(' ')[1])
 
 app.run()
