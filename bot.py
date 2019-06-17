@@ -127,7 +127,7 @@ def forward(client, message):
 
 @app.on_message(Filters.command('source') & Filters.user(491634139) )
 def forward(client, message):
-    with open('sue.txt', 'w') as file:
+   with open('sue.txt', 'w') as file:
     x = file.readlines()
     file.close()
     for y in x:
