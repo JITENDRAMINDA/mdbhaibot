@@ -117,7 +117,7 @@ def forward(client, message):
    with open('update.txt', 'w') as file:
     file.write(message.text.split(' ')[1])
     file.close()
-    message.reply("🌐 Done,Now my message update status is ```" + message.text.split(' ')[1] + "```. I will try to edited messages resend. ✅✅")
+    message.reply("🌐 Done,Now my message update status is ```" + message.text.split(' ')[1] + "```.✅✅")
  else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
 
@@ -138,7 +138,7 @@ def forward(client, message):
      x = file.readlines()
      file.close()
      for y in x:
-       message.reply("🌐 My current message update status is ```" + y + "```. I am trying to send edited messages resend. ✅✅")
+       message.reply("🌐 My current message update status is ```" + y + "```. ✅✅")
  else:
     message.reply("💼 Please write a valid command. ✅✅ ")
 
