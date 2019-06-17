@@ -127,32 +127,23 @@ def forward(client, message):
 
 @app.on_message(Filters.command('source') & Filters.user(491634139) )
 def forward(client, message):
- if len(message.text.split(' ')) > 1:
-  if len(message.text.split(' ')[1]) == 14:
-   with open('sue.txt', 'w') as file:
+    with open('sue.txt', 'w') as file:
     x = file.readlines()
     file.close()
     for y in x:
      message.reply("🌐 My source chat is ```" + y + "```. I am trying to forward messages from this chat. ✅✅")
-  else:
-    message.reply("💼 Please write a valid chat id. ✅✅ ")
- else:
-    message.reply("💼 Please write a valid chat id. ✅✅ ")
-
+ 
     
 @app.on_message(Filters.command('update') & Filters.user(491634139) )
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
-  if len(message.text.split(' ')[1]) == 14:
     with open('update.txt', 'w') as file:
      x = file.readlines()
      file.close()
      for y in x:
        message.reply("🌐 My current message update status is ```" + y + "```. I am trying to send edited messages resend. ✅✅")
-  else:
-    message.reply("💼 Please write a valid chat id. ✅✅ ")
- else:
-    message.reply("💼 Please write a valid chat id. ✅✅ ")
+   else:
+    message.reply("💼 Please write a valid command. ✅✅ ")
 
  
 @app.on_message(Filters.command("start"))
