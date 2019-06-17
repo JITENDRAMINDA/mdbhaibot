@@ -30,6 +30,7 @@ def main(client, message):
 
 @app.on_message(Filters.command('add') & Filters.user(491634139) )
 def forward(client, message):
+ if len(message.text.split(' ')) > 1:
   if len(message.text.split(' ')[1]) == 14:
    file = open("sure.txt" , "r")
    lines = file.readlines()
@@ -41,9 +42,13 @@ def forward(client, message):
     message.reply("💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been added to my database. ✅✅")
   else:
    message.reply("💼 Please write a valid chat id. ✅✅ ")
+ else:
+   message.reply("💼 Please write a valid chat id. ✅✅ ")
+
 
 @app.on_message(Filters.command('remove') & Filters.user(491634139))
 def forward(client, message):
+ if len(message.text.split(' ')) > 1:
   if len(message.text.split(' ')[1]) == 14:
    file = open("sure.txt" , "r")
    u = file.readlines()
@@ -59,6 +64,8 @@ def forward(client, message):
     message.reply("💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been removed to my database. ✅✅")
   else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
+ else:
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
 
 
 @app.on_message(Filters.command('list') & Filters.user(491634139))
@@ -72,12 +79,15 @@ def forward(client, message):
  
 @app.on_message(Filters.command('sets') & Filters.user(491634139) )
 def forward(client, message):
+ if len(message.text.split(' ')) > 1:
   if len(message.text.split(' ')[1]) == 14:
    with open('sue.txt', 'w') as file:
     file.write(message.text.split(' ')[1])
     file.close()
     message.reply("🌐 Done, Now my source chat is ```" + message.text.split(' ')[1] + "```. I will try to forward messages from this chat. ✅✅")
   else:
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
+ else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
 
     
