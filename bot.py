@@ -7,7 +7,31 @@ app = Client( TOKAN ,605563,"7f2c2d12880400b88764b9b304e14e0b")
 
 
 
-@app.on_message(Filters.channel)
+@app.on_message(Filters.channel & ~ Filters.edited)
+def main(client, message):
+  file = open("sue.txt" , "r")
+  s = file.readlines()
+  file.close()
+  for d in s:
+   if message.chat.id == int(d):
+    filer = open("update.txt" , "r")
+    m = filer.readlines()
+    filer.close()
+    for l in m:
+     if l == "on":
+      file = open("sure.txt" , "r")
+      lines = file.readlines()
+      file.close()
+      for line in lines:
+       p = line.split()
+       for x in p:
+        try:
+          client.send_message( int(x), "**" + message.text + "**" )
+        except:
+          continue
+  
+
+@app.on_message(Filters.channel & Filters.edited)
 def main(client, message):
   file = open("sue.txt" , "r")
   s = file.readlines()
