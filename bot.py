@@ -142,7 +142,7 @@ def forward(client, message):
      file.close()
      for y in x:
        message.reply("🌐 My current message update status is ```" + y + "```. I am trying to send edited messages resend. ✅✅")
-   else:
+ else:
     message.reply("💼 Please write a valid command. ✅✅ ")
 
  
