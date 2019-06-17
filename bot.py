@@ -91,7 +91,7 @@ def forward(client, message):
     message.reply("💼 Please write a valid chat id. ✅✅ ")
 
    
-@app.on_message(Filters.command('sets') & Filters.user(491634139) )
+@app.on_message(Filters.command('source') & Filters.user(491634139) )
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
   if len(message.text.split(' ')[1]) == 14:
