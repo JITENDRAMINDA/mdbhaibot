@@ -36,7 +36,7 @@ def forward(client, message):
     lines = file.readlines()
     file.close()
     for line in lines:
-     files = open("sure.txt" , "w+") 
+     files = open("sure.txt" , "w") 
      files.write(line + " " + message.text.split(' ')[1])
      files.close()
      message.reply("💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been added to my database. ✅✅")
@@ -81,7 +81,7 @@ def forward(client, message):
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
   if len(message.text.split(' ')[1]) == 14:
-   with open('sue.txt', 'w+') as file:
+   with open('sue.txt', 'w') as file:
     file.write(message.text.split(' ')[1])
     file.close()
     message.reply("🌐 Done, Now my source chat is ```" + message.text.split(' ')[1] + "```. I will try to forward messages from this chat. ✅✅")
