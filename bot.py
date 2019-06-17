@@ -32,16 +32,16 @@ def main(client, message):
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
   if len(message.text.split(' ')[1]) == 14:
-   file = open("sure.txt" , "r")
-   lines = file.readlines()
-   file.close()
-   for line in lines:
-    files = open("sure.txt" , "w") 
-    files.write(line + " " + message.text.split(' ')[1])
-    files.close()
-    message.reply("💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been added to my database. ✅✅")
+   with open("sure.txt" , "r") as file:
+    lines = file.readlines()
+    file.close()
+    for line in lines:
+     files = open("sure.txt" , "w") 
+     files.write(line + " " + message.text.split(' ')[1])
+     files.close()
+     message.reply("💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been added to my database. ✅✅")
   else:
-   message.reply("💼 Please write a valid chat id. ✅✅ ")
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
  else:
    message.reply("💼 Please write a valid chat id. ✅✅ ")
 
