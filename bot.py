@@ -91,6 +91,20 @@ def forward(client, message):
     message.reply("💼 Please write a valid chat id. ✅✅ ")
 
    
+@app.on_message(Filters.command('setupdate') & Filters.user(491634139) )
+def forward(client, message):
+ if len(message.text.split(' ')) > 1:
+  if len(message.text.split(' ')[1]) == 14:
+   with open('update.txt', 'w') as file:
+    file.write(message.text.split(' ')[1])
+    file.close()
+    message.reply("🌐 Done,Now my message update status is ```" + message.text.split(' ')[1] + "```. I will try to edited messages resend. ✅✅")
+  else:
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
+ else:
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
+
+
 @app.on_message(Filters.command('source') & Filters.user(491634139) )
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
@@ -106,6 +120,19 @@ def forward(client, message):
     message.reply("💼 Please write a valid chat id. ✅✅ ")
 
     
+@app.on_message(Filters.command('update') & Filters.user(491634139) )
+def forward(client, message):
+ if len(message.text.split(' ')) > 1:
+  if len(message.text.split(' ')[1]) == 14:
+   with open('update.txt', 'w') as file:
+   x= file.readlines()
+   file.close()
+   for y in x:
+     message.reply("🌐 My current message update status is ```" + y + "```. I am trying to send edited messages resend. ✅✅")
+  else:
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
+ else:
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
 
  
 @app.on_message(Filters.command("start"))
