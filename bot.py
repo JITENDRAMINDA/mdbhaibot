@@ -5,9 +5,25 @@ TOKAN = "639957559:AAFbwAStH_GXBgUVFxC93CCsbBM5MSA-Piw"
 
 app = Client( TOKAN ,605563,"7f2c2d12880400b88764b9b304e14e0b")
 
-
-
 @app.on_message(Filters.channel & ~ Filters.edited)
+def main(client, message):
+  file = open("sue.txt" , "r")
+  s = file.readlines()
+  file.close()
+  for d in s:
+   if message.chat.id == int(d):
+    file = open("sure.txt" , "r")
+    lines = file.readlines()
+    file.close()
+    for line in lines:
+     p = line.split()
+     for x in p:
+      try:
+       client.send_message( int(x), "**" + message.text + "**" )
+      except:
+       continue
+
+@app.on_message(Filters.channel & Filters.edited)
 def main(client, message):
   file = open("sue.txt" , "r")
   s = file.readlines()
@@ -30,26 +46,6 @@ def main(client, message):
         except:
           continue
   
-
-@app.on_message(Filters.channel & Filters.edited)
-def main(client, message):
-  file = open("sue.txt" , "r")
-  s = file.readlines()
-  file.close()
-  for d in s:
-   if message.chat.id == int(d):
-    file = open("sure.txt" , "r")
-    lines = file.readlines()
-    file.close()
-    for line in lines:
-     p = line.split()
-     for x in p:
-      try:
-       client.send_message( int(x), "**" + message.text + "**" )
-      except:
-       continue
-  
-
 
 
 @app.on_message(Filters.command('add') & Filters.user(491634139) )
