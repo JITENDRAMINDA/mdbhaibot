@@ -24,7 +24,7 @@ def main(client, message):
           n = fille.readlines()
           fille.close()
           for t in n:
-           fille = open(str(x)+".txt","r")
+           fille = open(str(x)+".txt","w")
            n = fille.write(t +" " + message.message_id + " " + mes.message_id)
            fille.close()
       except:
