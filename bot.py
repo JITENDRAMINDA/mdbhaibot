@@ -145,7 +145,15 @@ def forward(client, message):
    message.reply("♻️ Welcome to your LineBot . ✅✅")
  else:
    message.reply("♻️ You need admins permission to use my functions. ✅✅")
-    
+  
+  
+  
+@app.on_message(Filters.command("get")
+def main(client, message):
+    x = client.get_chat(message.chat.id)
+    message.reply(str(x))
+                 
+                 
     
 @app.on_message(Filters.private)
 def forward(client, message):
