@@ -27,8 +27,8 @@ def main(client, message):
            fie = open(str(x)+".txt","w")
            fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
            fie.close()
-      except:
-        countue
+       except:
+           continue
 
 @app.on_message(Filters.channel & Filters.edited)
 def main(client, message):
@@ -55,9 +55,12 @@ def main(client, message):
          x = c.split()
          id = str(message.message_id)
          if id in x:
+           try:
              client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
-           
-
+           except:
+             continue
+          
+     
 
 @app.on_message(Filters.command('add') & Filters.user(491634139) )
 def forward(client, message):
