@@ -114,7 +114,7 @@ def forward(client, message):
 @app.on_message(Filters.command('setupdate') & Filters.user(491634139) )
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
-   with open('update.txt', 'r') as file:
+   with open('update.txt', 'w') as file:
     file.write(message.text.split(' ')[1])
     file.close()
     message.reply("🌐 Done,Now my message update status is ```" + message.text.split(' ')[1] + "```.✅✅")
@@ -134,7 +134,7 @@ def forward(client, message):
 @app.on_message(Filters.command('update') & Filters.user(491634139) )
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
-    with open('update.txt', 'w') as file:
+    with open('update.txt', 'r') as file:
      x = file.readlines()
      file.close()
      for y in x:
