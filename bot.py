@@ -104,6 +104,20 @@ def forward(client, message):
  else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
 
+@app.on_message(Filters.command('clear') & Filters.user(491634139))
+def forward(client, message):
+    file = open("sure.txt" , "r")
+    lines = file.readlines()
+    file.close()
+    for line in lines:
+     p = line.split()
+     for x in p:
+        fie = open(str(x)+".txt","w")
+        fie.write("001 002")
+        fie.close()
+        message.reply("☢️ Done, Editing data cleared ✅✅")
+
+
 
 @app.on_message(Filters.command('list') & Filters.user(491634139))
 def forward(client, message):
