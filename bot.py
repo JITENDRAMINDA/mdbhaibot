@@ -25,7 +25,7 @@ def main(client, message):
           fille.close()
           for t in n:
            fie = open(str(x)+".txt","w")
-           fie.write(str(t) +" " + message.message_id + " " + mes.message_id)
+           fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
            fie.close()
       
 
