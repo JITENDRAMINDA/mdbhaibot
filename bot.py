@@ -20,9 +20,13 @@ def main(client, message):
      for x in p:
       try:
           mes = client.send_message( int(x), "**" + message.text + "**" )
-          with open(str(x)+".txt", "w") as z:
-            z.write(str(message.message_id) + " " + str(mes.message_id))
-            z.close()
+          fille = open(str(x)+".txt","r")
+          n = fille.readlines()
+          fille.close()
+          for t in n:
+           fille = open(str(x)+".txt","r")
+           n = fille.write(t +" " + message.message_id + " " + mes.message_id)
+           fille.close()
       except:
           continue
   
