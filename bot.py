@@ -133,15 +133,11 @@ def forward(client, message):
     
 @app.on_message(Filters.command('update') & Filters.user(491634139) )
 def forward(client, message):
- if len(message.text.split(' ')) > 1:
     with open('update.txt', 'r') as file:
      x = file.readlines()
      file.close()
      for y in x:
        message.reply("🌐 My current message update status is ```" + y + "```. ✅✅")
- else:
-    message.reply("💼 Please write a valid command. ✅✅ ")
-
  
 @app.on_message(Filters.command("start"))
 def forward(client, message):
