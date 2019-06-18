@@ -22,6 +22,7 @@ def main(client, message):
           mes = client.send_message( int(x), "**" + message.text + "**" )
           with open(str(x)+".txt", "w") as z:
             z.write(str(message.message_id) + " " + str(mes.message_id))
+            z.close()
       except:
           continue
   
