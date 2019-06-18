@@ -96,8 +96,7 @@ def forward(client, message):
   for v in u :
     p = v.split()
     for x in p:
-     y = client.get_chat(int(x)).title
-     message.reply("🏘️ List of Chat_ids in my database are ```" + str(v) + "(" + str(y) + ")" + "```. Its can be change. ✅✅")
+      message.reply("🏘️ List of Chat_ids in my database are ```" + str(v) + "(" + str( client.get_chat(int(x)).title ) + ")" + "```. Its can be change. ✅✅")
   
  
 @app.on_message(Filters.command('sets') & Filters.user(491634139) )
