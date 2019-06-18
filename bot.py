@@ -56,11 +56,8 @@ def main(client, message):
          x = c.split()
          id = str(message.message_id)
          if id in x:
-           try:
              client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
-           except:
-             continue
-        
+           
 
 
 @app.on_message(Filters.command('add') & Filters.user(491634139) )
