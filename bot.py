@@ -41,16 +41,16 @@ def main(client, message):
       file.close()
       for line in lines:
        p = line.split()
-       for x in p:
-        files = open(str(x)+".txt" , "r")
-        d = file.readlines()
+       for o in p:
+        files = open(str(o)+".txt" , "r")
+        d = files.readlines()
         files.close()
         for c in d:
          x = c.split()
          id = str(message.message_id)
          if id in x:
            try:
-             client.edit_message_text(int(c),int(x[x.index(id)+1]), "**" + message.text + "**" )
+             client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
            except:
              continue
         
