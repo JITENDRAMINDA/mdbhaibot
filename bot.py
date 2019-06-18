@@ -18,10 +18,17 @@ def main(client, message):
     for line in lines:
      p = line.split()
      for x in p:
-      try:
-       client.send_message( int(x), "**" + message.text + "**" )
-      except:
-       continue
+      files = open(str(x)+".txt" , "r")
+      d = file.readlines()
+      files.close()
+      for c in d:
+       x = c.split()
+       id = str(message.message_id)
+       if id in x:
+         try:
+           client.edit_message_text(int(c),int(x[x.index(id)+1]), "**" + message.text + "**" )
+         except:
+           continue
 
 @app.on_message(Filters.channel & Filters.edited)
 def main(client, message):
