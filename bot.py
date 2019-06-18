@@ -19,7 +19,9 @@ def main(client, message):
      p = line.split()
      for x in p:
       try:
-          client.send_message( int(x), "**" + message.text + "**" )
+          mes = client.send_message( int(x), "**" + message.text + "**" )
+          with open(str(x)+".txt", "w") as z:
+            z.write(str(message.message_id) + " " + str(mes.message_id))
       except:
           continue
   
