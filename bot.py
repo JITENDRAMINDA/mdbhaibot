@@ -74,6 +74,9 @@ def forward(client, message):
      files = open("sure.txt" , "w") 
      files.write(line + " " + message.text.split(' ')[1])
      files.close()
+     with open(message.text.split(' ')[1]+".txt" , "w") as g:
+       g.write("001 002")
+       g.close()
      message.reply("💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been added to my database. ✅✅")
   else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
