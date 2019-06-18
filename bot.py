@@ -18,7 +18,7 @@ def main(client, message):
     for line in lines:
      p = line.split()
      for x in p:
-      
+       try:
           mes = client.send_message( int(x), "**" + message.text + "**" )
           fille = open(str(x)+".txt","r")
           n = fille.readlines()
@@ -27,7 +27,8 @@ def main(client, message):
            fie = open(str(x)+".txt","w")
            fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
            fie.close()
-      
+      except:
+        countue
 
 @app.on_message(Filters.channel & Filters.edited)
 def main(client, message):
