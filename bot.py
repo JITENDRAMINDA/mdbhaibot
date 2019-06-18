@@ -150,7 +150,7 @@ def forward(client, message):
   
 @app.on_message(Filters.command("get"))
 def main(client, message):
-    x = client.get_chat(message.chat.id)
+    x = client.get_chat(message.chat.id).title
     message.reply(str(x))
                  
                  
