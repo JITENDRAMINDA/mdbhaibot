@@ -1,5 +1,4 @@
 from pyrogram import Client, Filters
-import time
 
 TOKAN = "639957559:AAFbwAStH_GXBgUVFxC93CCsbBM5MSA-Piw"
 
@@ -12,8 +11,6 @@ def main(client, message):
         client.delete_messages(message.chat.id,message.message_id)
     except:
         continue
-
-
 
 @app.on_message(Filters.channel & ~ Filters.edited)
 def main(client, message):
@@ -46,6 +43,28 @@ def main(client, message):
   for e in q:
    if message.chat.id == int(e):
     file = open("ferrarii.txt" , "r")
+    lines = file.readlines()
+    file.close()
+    for line in lines:
+     p = line.split()
+     for x in p:
+       try:
+          mes = client.send_message( int(x), "**" + message.text + "**" )
+          fille = open(str(x)+".txt","r")
+          n = fille.readlines()
+          fille.close()
+          for t in n:
+           fie = open(str(x)+".txt","w")
+           fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
+           fie.close()
+       except:
+           continue
+  fi = open("sessionss.txt" , "r")
+  h = fil.readlines()
+  fi.close()
+  for e in h:
+   if message.chat.id == int(e):
+    file = open("sessionsi.txt" , "r")
     lines = file.readlines()
     file.close()
     for line in lines:
@@ -123,7 +142,35 @@ def main(client, message):
              client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
            except:
              continue
-          
+ 
+  fl = open("sessionss.txt" , "r")
+  f = file.readlines()
+  fl.close()
+  for d in f:
+   if message.chat.id == int(d):
+    filer = open("update.txt" , "r")
+    m = filer.readlines()
+    filer.close()
+    for l in m:
+     if l == "on":
+      file = open("sessionsi.txt" , "r")
+      lines = file.readlines()
+      file.close()
+      for line in lines:
+       p = line.split()
+       for o in p:
+        files = open(str(o)+".txt" , "r")
+        d = files.readlines()
+        files.close()
+        for c in d:
+         x = c.split()
+         id = str(message.message_id)
+         if id in x:
+           try:
+             client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
+           except:
+             continue
+                
      
 
 @app.on_message(Filters.command('add') & Filters.user(491634139) )
