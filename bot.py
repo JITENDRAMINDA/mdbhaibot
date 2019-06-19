@@ -9,7 +9,7 @@ def main(client, message):
  lines = file.readlines()
  file.close()
  for line in lines:
-  p = lines.split()
+  p = line.split()
   for s in p:
    try:
     mes = client.send_message( int(s), "**" + message.text + "**" )
@@ -29,7 +29,7 @@ def main(client, message):
  lines = file.readlines().split(" ")
  file.close()
  for line in lines:
-  p = lines.split()
+  p = line.split()
   for r in p: 
    try:
     mes = client.send_message( int(r), "**" + message.text + "**" )
@@ -48,7 +48,7 @@ def main(client, message):
  lines = file.readlines().split(' ')
  file.close()
  for line in lines:
-  t = lines.split()
+  t = line.split()
   for m in t:
    files = open(str(m)+".txt" , "r")
    d = files.readlines()
@@ -67,7 +67,7 @@ def main(client, message):
  lines = file.readlines().split(' ')
  file.close()
  for line in lines:
-  b = lines.split()
+  b = line.split()
   for a in b:
    files = open(str(a)+".txt" , "r")
    d = files.readlines()
