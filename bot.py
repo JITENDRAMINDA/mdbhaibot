@@ -71,7 +71,8 @@ def main(client, message):
      try:
       client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
      except:
-      continue@app.on_message(Filters.command('add') & Filters.user(491634139) )
+      continue
+@app.on_message(Filters.command('add') & Filters.user(491634139) )
 def forward(client, message):
  if len(message.text.split(' ')) > 2:
   if len(message.text.split(' ')[1]) == 14:
