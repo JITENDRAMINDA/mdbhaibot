@@ -8,7 +8,7 @@ def main(client, message):
  file = open("bullet.txt" , "r")
  lines = file.readlines().split(" ")
  file.close()
-  for line in lines:
+ for line in lines:
    try:
     mes = client.send_message( int(line), "**" + message.text + "**" )
     fille = open(str(line)+".txt","r")
@@ -26,7 +26,7 @@ def main(client, message):
  file = open("ferrari.txt" , "r")
  lines = file.readlines().split(" ")
  file.close()
-  for line in lines:
+ for line in lines:
    try:
     mes = client.send_message( int(line), "**" + message.text + "**" )
     fille = open(str(line)+".txt","r")
@@ -43,7 +43,7 @@ def main(client, message):
  file = open("ferrari.txt" , "r")
  lines = file.readlines().split(' ')
  file.close()
-  for line in lines:
+ for line in lines:
    files = open(str(line)+".txt" , "r")
    d = files.readlines()
    files.close()
@@ -60,7 +60,7 @@ def main(client, message):
  file = open("bullet.txt" , "r")
  lines = file.readlines().split(' ')
  file.close()
-  for line in lines:
+ for line in lines:
    files = open(str(line)+".txt" , "r")
    d = files.readlines()
    files.close()
