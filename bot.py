@@ -202,9 +202,9 @@ def forward(client, message):
   if len(message.text.split(' ')[1]) == 14:
       x = client.get_chat(int(message.text.split(' ')[1])).title
       message.reply("📶 This chat name is - "+str(x)+" ✅")
- else:
-    message.reply("💼 Please write a valid chat id. ✅✅ ")
   else:
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
+ else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
 
 @app.on_message(Filters.command('update') & Filters.user(491634139) )
