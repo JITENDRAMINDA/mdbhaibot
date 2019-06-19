@@ -174,7 +174,7 @@ def forward(client, message):
 @app.on_message(Filters.command('get') & Filters.user(491634139) )
 def forward(client, message):
   x = client.get_chat(int(message.text.split(' ')[1])).title
-  message.reply("This chat name is - "+str(x))
+  message.reply("📶 This chat name is - "+str(x)+"✅")
     
 @app.on_message(Filters.command('update') & Filters.user(491634139) )
 def forward(client, message):
