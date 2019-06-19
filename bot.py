@@ -171,6 +171,10 @@ def forward(client, message):
     for y in x:
      message.reply("🌐 My source chat is ```" + y + "```. I am trying to forward messages from this chat. ✅✅")
  
+@app.on_message(Filters.command('get') & Filters.user(491634139) )
+def forward(client, message):
+  x = client.get_chat(int(message.text.split(' ')[1])).title
+  message.reply("This chat name is - "+str(x))
     
 @app.on_message(Filters.command('update') & Filters.user(491634139) )
 def forward(client, message):
