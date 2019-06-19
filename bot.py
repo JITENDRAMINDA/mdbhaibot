@@ -26,7 +26,7 @@ def main(client, message):
 @app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
 def main(client, message):
  file = open("ferrari.txt" , "r")
- lines = file.readlines().split(" ")
+ lines = file.readlines()
  file.close()
  for line in lines:
   p = line.split()
@@ -45,7 +45,7 @@ def main(client, message):
 @app.on_message(Filters.chat(ferrari) & Filters.edited)
 def main(client, message):
  file = open("ferrari.txt" , "r")
- lines = file.readlines().split(' ')
+ lines = file.readlines()
  file.close()
  for line in lines:
   t = line.split()
@@ -64,7 +64,7 @@ def main(client, message):
 @app.on_message(Filters.chat(bullet) & Filters.edited)
 def main(client, message):
  file = open("bullet.txt" , "r")
- lines = file.readlines().split(' ')
+ lines = file.readlines()
  file.close()
  for line in lines:
   b = line.split()
