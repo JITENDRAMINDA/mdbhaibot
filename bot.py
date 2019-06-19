@@ -17,12 +17,12 @@ def main(client, message):
 
 @app.on_message(Filters.channel & ~ Filters.edited)
 def main(client, message):
-  file = open("sue.txt" , "r")
+  file = open("bullets.txt" , "r")
   s = file.readlines()
   file.close()
   for d in s:
    if message.chat.id == int(d):
-    file = open("sure.txt" , "r")
+    file = open("bulleti.txt" , "r")
     lines = file.readlines()
     file.close()
     for line in lines:
@@ -40,12 +40,12 @@ def main(client, message):
        except:
            continue
 
-  fil = open("fers.txt" , "r")
+  fil = open("ferraris.txt" , "r")
   q = fil.readlines()
   fil.close()
   for e in q:
    if message.chat.id == int(e):
-    file = open("feri.txt" , "r")
+    file = open("ferrarii.txt" , "r")
     lines = file.readlines()
     file.close()
     for line in lines:
@@ -67,7 +67,7 @@ def main(client, message):
   
 @app.on_message(Filters.channel & Filters.edited)
 def main(client, message):
-  file = open("sue.txt" , "r")
+  file = open("ferraris.txt" , "r")
   s = file.readlines()
   file.close()
   for d in s:
@@ -77,7 +77,36 @@ def main(client, message):
     filer.close()
     for l in m:
      if l == "on":
-      file = open("sure.txt" , "r")
+      file = open("ferrarii.txt" , "r")
+      lines = file.readlines()
+      file.close()
+      for line in lines:
+       p = line.split()
+       for o in p:
+        files = open(str(o)+".txt" , "r")
+        d = files.readlines()
+        files.close()
+        for c in d:
+         x = c.split()
+         id = str(message.message_id)
+         if id in x:
+           try:
+             client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
+           except:
+             continue
+          
+
+  fil = open("bullets.txt" , "r")
+  f = file.readlines()
+  fil.close()
+  for d in f:
+   if message.chat.id == int(d):
+    filer = open("update.txt" , "r")
+    m = filer.readlines()
+    filer.close()
+    for l in m:
+     if l == "on":
+      file = open("bulleti.txt" , "r")
       lines = file.readlines()
       file.close()
       for line in lines:
