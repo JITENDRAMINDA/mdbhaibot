@@ -173,9 +173,15 @@ def forward(client, message):
  
 @app.on_message(Filters.command('get') & Filters.user(491634139) )
 def forward(client, message):
-  x = client.get_chat(int(message.text.split(' ')[1])).title
-  message.reply("📶 This chat name is - "+str(x)+"✅")
-    
+ if len(message.text.split(' ')) > 1:
+  if len(message.text.split(' ')[1]) == 14:
+      x = client.get_chat(int(message.text.split(' ')[1])).title
+      message.reply("📶 This chat name is - "+str(x)+"✅")
+ else:
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
+  else:
+    message.reply("💼 Please write a valid chat id. ✅✅ ")
+
 @app.on_message(Filters.command('update') & Filters.user(491634139) )
 def forward(client, message):
     with open('update.txt', 'r') as file:
