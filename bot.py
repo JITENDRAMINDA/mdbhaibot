@@ -20,23 +20,7 @@ def main(client, message):
      fie.close()
    except:
     continue
-@app.on_message(Filters.chat(bullet) & Filters.edited)
-def main(client, message):
- file = open("bullet.txt" , "r")
- lines = file.readlines().split(' ')
- file.close()
-  for line in lines:
-   files = open(str(line)+".txt" , "r")
-   d = files.readlines()
-   files.close()
-   for c in d:
-    x = c.split()
-    id = str(message.message_id)
-    if id in x:
-     try:
-      client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
-     except:
-      continue
+
 @app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
 def main(client, message):
  file = open("ferrari.txt" , "r")
@@ -71,7 +55,23 @@ def main(client, message):
       client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
      except:
       continue
-@app.on_message(Filters.command('add') & Filters.user(491634139) )
+@app.on_message(Filters.chat(bullet) & Filters.edited)
+def main(client, message):
+ file = open("bullet.txt" , "r")
+ lines = file.readlines().split(' ')
+ file.close()
+  for line in lines:
+   files = open(str(line)+".txt" , "r")
+   d = files.readlines()
+   files.close()
+   for c in d:
+    x = c.split()
+    id = str(message.message_id)
+    if id in x:
+     try:
+      client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
+     except:
+      continue@app.on_message(Filters.command('add') & Filters.user(491634139) )
 def forward(client, message):
  if len(message.text.split(' ')) > 2:
   if len(message.text.split(' ')[1]) == 14:
