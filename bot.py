@@ -6,16 +6,18 @@ ferrari = -1001274887387
 @app.on_message(Filters.chat(bullet) & ~ Filters.edited)
 def main(client, message):
  file = open("bullet.txt" , "r")
- lines = file.readlines().split(" ")
+ lines = file.readlines()
  file.close()
  for line in lines:
+  p = line.split()
+  for s in p:
    try:
-    mes = client.send_message( int(line), "**" + message.text + "**" )
-    fille = open(str(line)+".txt","r")
+    mes = client.send_message( int(s), "**" + message.text + "**" )
+    fille = open(str(s)+".txt","r")
     n = fille.readlines()
     fille.close()
     for t in n:
-     fie = open(str(line)+".txt","w")
+     fie = open(str(s)+".txt","w")
      fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
      fie.close()
    except:
@@ -27,13 +29,15 @@ def main(client, message):
  lines = file.readlines().split(" ")
  file.close()
  for line in lines:
+  p = line.split()
+  for r in p: 
    try:
-    mes = client.send_message( int(line), "**" + message.text + "**" )
-    fille = open(str(line)+".txt","r")
+    mes = client.send_message( int(r), "**" + message.text + "**" )
+    fille = open(str(r)+".txt","r")
     n = fille.readlines()
     fille.close()
     for t in n:
-     fie = open(str(line)+".txt","w")
+     fie = open(str(r)+".txt","w")
      fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
      fie.close()
    except:
@@ -44,7 +48,9 @@ def main(client, message):
  lines = file.readlines().split(' ')
  file.close()
  for line in lines:
-   files = open(str(line)+".txt" , "r")
+  t = line.split()
+  for m in t:
+   files = open(str(m)+".txt" , "r")
    d = files.readlines()
    files.close()
    for c in d:
@@ -52,7 +58,7 @@ def main(client, message):
     id = str(message.message_id)
     if id in x:
      try:
-      client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
+      client.edit_message_text(int(m),int(x[x.index(id)+1]), "**" + message.text + "**" )
      except:
       continue
 @app.on_message(Filters.chat(bullet) & Filters.edited)
@@ -61,7 +67,9 @@ def main(client, message):
  lines = file.readlines().split(' ')
  file.close()
  for line in lines:
-   files = open(str(line)+".txt" , "r")
+  b = lines.split()
+  for a in b:
+   files = open(str(a)+".txt" , "r")
    d = files.readlines()
    files.close()
    for c in d:
@@ -69,7 +77,7 @@ def main(client, message):
     id = str(message.message_id)
     if id in x:
      try:
-      client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
+      client.edit_message_text(int(a),int(x[x.index(id)+1]), "**" + message.text + "**" )
      except:
       continue
 @app.on_message(Filters.command('add') & Filters.user(491634139) )
