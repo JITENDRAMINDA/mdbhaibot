@@ -73,7 +73,6 @@ def forward(client, message):
    u = file.readlines()
    file.close()
    for v in u:
-
      lines = v.split() 
      del lines[lines.index(message.text.split(' ')[1])]
      y = " ".join(str(x) for x in lines)
