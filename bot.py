@@ -38,6 +38,40 @@ def main(client, message):
       client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
      except:
       continue
+@app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
+def main(client, message):
+ file = open("ferrari.txt" , "r")
+ lines = file.readlines().split(" ")
+ file.close()
+  for line in lines:
+   try:
+    mes = client.send_message( int(line), "**" + message.text + "**" )
+    fille = open(str(line)+".txt","r")
+    n = fille.readlines()
+    fille.close()
+    for t in n:
+     fie = open(str(line)+".txt","w")
+     fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
+     fie.close()
+   except:
+    continue
+@app.on_message(Filters.chat(ferrari) & Filters.edited)
+def main(client, message):
+ file = open("ferrari.txt" , "r")
+ lines = file.readlines().split(' ')
+ file.close()
+  for line in lines:
+   files = open(str(line)+".txt" , "r")
+   d = files.readlines()
+   files.close()
+   for c in d:
+    x = c.split()
+    id = str(message.message_id)
+    if id in x:
+     try:
+      client.edit_message_text(int(o),int(x[x.index(id)+1]), "**" + message.text + "**" )
+     except:
+      continue
 @app.on_message(Filters.command('add') & Filters.user(491634139) )
 def forward(client, message):
  if len(message.text.split(' ')) > 2:
@@ -57,7 +91,6 @@ def forward(client, message):
     message.reply("💼 Please write a valid chat id. ✅✅ ")
  else:
    message.reply("💼 Please write a valid chat id. ✅✅ ")
-
 @app.on_message(Filters.command('remove') & Filters.user(491634139))
 def forward(client, message):
  if len(message.text.split(' ')) > 2:
@@ -77,7 +110,6 @@ def forward(client, message):
     message.reply("💼 Please write a valid chat id. ✅✅ ")
  else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
-
 @app.on_message(Filters.command('clear') & Filters.user(491634139))
 def forward(client, message):
     file = open(message.text.split(" ")[1] + ".txt" , "r")
@@ -90,7 +122,6 @@ def forward(client, message):
         fie.write("001 002")
         fie.close()
         message.reply("☢️ Done, Editing data cleared ✅✅")
-
 @app.on_message(Filters.command('list') & Filters.user(491634139))
 def forward(client, message):
   file = open(message.text.split(" ")[1] + ".txt" , "r")
@@ -98,7 +129,6 @@ def forward(client, message):
   file.close()
   for v in u :
       message.reply("🏘️ List of Chat_ids in my database are ```" + str(v) + "```. Its can be change. ✅✅")
-  
 @app.on_message(Filters.command('get') & Filters.user(491634139) )
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
@@ -109,17 +139,14 @@ def forward(client, message):
     message.reply("💼 Please write a valid chat id. ✅✅ ")
  else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
-
 @app.on_message(Filters.command("start"))
 def forward(client, message):
  if message.from_user.id == 491634139:
    message.reply("♻️ Welcome to your LineBot . ✅✅")
  else:
    message.reply("♻️ You need admins permission to use my functions. ✅✅")
-     
 @app.on_message(Filters.private)
 def forward(client, message):
  if not message.from_user.id == 491634139:
    message.reply("♻️ You need admins permission to use my functions. ✅✅")
- 
 app.run()
