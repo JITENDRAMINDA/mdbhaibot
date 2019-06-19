@@ -59,9 +59,9 @@ def main(client, message):
            fie.close()
        except:
            continue
-  fil = open("sessionss.txt" , "r")
-  h = fil.readlines()
-  fil.close()
+  fl = open("sessionss.txt" , "r")
+  h = fl.readlines()
+  fl.close()
   for e in h:
    if message.chat.id == int(e):
     file = open("sessionsi.txt" , "r")
