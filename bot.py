@@ -167,7 +167,7 @@ def forward(client, message):
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
   if len(message.text.split(' ')[1]) == 14:
-   with open('sue.txt', 'w') as file:
+   with open(message.text.split(' ')[2]. +'txt', 'w') as file:
     file.write(message.text.split(' ')[1])
     file.close()
     message.reply("🌐 Done, Now my source chat is ```" + message.text.split(' ')[1] + "```. I will try to forward messages from this chat. ✅✅")
