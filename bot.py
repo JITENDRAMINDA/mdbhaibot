@@ -176,7 +176,7 @@ def forward(client, message):
  if len(message.text.split(' ')) > 1:
   if len(message.text.split(' ')[1]) == 14:
       x = client.get_chat(int(message.text.split(' ')[1])).title
-      message.reply("📶 This chat name is - "+str(x)+"✅")
+      message.reply("📶 This chat name is - "+str(x)+" ✅")
  else:
     message.reply("💼 Please write a valid chat id. ✅✅ ")
   else:
