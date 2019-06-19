@@ -40,6 +40,31 @@ def main(client, message):
        except:
            continue
 
+  fil = open("fers.txt" , "r")
+  q = fil.readlines()
+  fil.close()
+  for e in q:
+   if message.chat.id == int(e):
+    file = open("feri.txt" , "r")
+    lines = file.readlines()
+    file.close()
+    for line in lines:
+     p = line.split()
+     for x in p:
+       try:
+          mes = client.send_message( int(x), "**" + message.text + "**" )
+          fille = open(str(x)+".txt","r")
+          n = fille.readlines()
+          fille.close()
+          for t in n:
+           fie = open(str(x)+".txt","w")
+           fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
+           fie.close()
+       except:
+           continue
+
+
+  
 @app.on_message(Filters.channel & Filters.edited)
 def main(client, message):
   file = open("sue.txt" , "r")
@@ -76,11 +101,11 @@ def main(client, message):
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
   if len(message.text.split(' ')[1]) == 14:
-   with open("sure.txt" , "r") as file:
+   with open(message.text.split(" ")[2] + ".txt" , "r") as file:
     lines = file.readlines()
     file.close()
     for line in lines:
-     files = open("sure.txt" , "w") 
+     files = open(message.text.split(" ")[2] + ".txt" , "w") 
      files.write(line + " " + message.text.split(' ')[1])
      files.close()
      with open(message.text.split(' ')[1]+".txt" , "w") as g:
@@ -97,7 +122,7 @@ def forward(client, message):
 def forward(client, message):
  if len(message.text.split(' ')) > 1:
   if len(message.text.split(' ')[1]) == 14:
-   file = open("sure.txt" , "r")
+   file = open(message.text.split(" ")[2] + ".txt" , "r")
    u = file.readlines()
    file.close()
    for v in u:
@@ -105,7 +130,7 @@ def forward(client, message):
     lines = v.split() 
     del lines[lines.index(message.text.split(' ')[1])]
     y = " ".join(str(x) for x in lines)
-    files = open("sure.txt" , "w") 
+    files = open(message.text.split(" ")[2] + ".txt" , "w") 
     files.write(y)
     files.close()
     message.reply("💾 Done, The chat_id  ```" + message.text.split(' ')[1] +"```🌐 has been removed to my database. ✅✅")
@@ -116,7 +141,7 @@ def forward(client, message):
 
 @app.on_message(Filters.command('clear') & Filters.user(491634139))
 def forward(client, message):
-    file = open("sure.txt" , "r")
+    file = open(message.text.split(" ")[1] + ".txt" , "r")
     lines = file.readlines()
     file.close()
     for line in lines:
@@ -131,7 +156,7 @@ def forward(client, message):
 
 @app.on_message(Filters.command('list') & Filters.user(491634139))
 def forward(client, message):
-  file = open("sure.txt" , "r")
+  file = open(message.text.split(" ")[1] + ".txt" , "r")
   u = file.readlines()
   file.close()
   for v in u :
@@ -165,7 +190,7 @@ def forward(client, message):
 
 @app.on_message(Filters.command('source') & Filters.user(491634139) )
 def forward(client, message):
-   with open('sue.txt', 'r') as file:
+   with open(message.text.split(" ")[1] + '.txt', 'r') as file:
     x = file.readlines()
     file.close()
     for y in x:
