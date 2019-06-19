@@ -59,9 +59,9 @@ def main(client, message):
            fie.close()
        except:
            continue
-  fi = open("sessionss.txt" , "r")
+  fil = open("sessionss.txt" , "r")
   h = fil.readlines()
-  fi.close()
+  fil.close()
   for e in h:
    if message.chat.id == int(e):
     file = open("sessionsi.txt" , "r")
@@ -116,7 +116,7 @@ def main(client, message):
           
 
   fil = open("bullets.txt" , "r")
-  f = file.readlines()
+  f = fil.readlines()
   fil.close()
   for d in f:
    if message.chat.id == int(d):
@@ -144,7 +144,7 @@ def main(client, message):
              continue
  
   fl = open("sessionss.txt" , "r")
-  f = file.readlines()
+  f = fl.readlines()
   fl.close()
   for d in f:
    if message.chat.id == int(d):
