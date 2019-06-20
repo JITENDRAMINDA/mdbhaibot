@@ -1,5 +1,5 @@
 from pyrogram import Client, Filters
-TOKAN = "802415115:AAEuigqtq82PVZ1ZE2csaLEMrrQuUjqj1Jo"
+TOKAN = "835349563:AAEw0o3fa2FVm898JF_Hav_jgsajZPna-I8"
 app = Client( TOKAN ,605563,"7f2c2d12880400b88764b9b304e14e0b")
 bullet = -1001378725482
 ferrari = -1001274887387 
