@@ -3,25 +3,7 @@ TOKAN = "639957559:AAFbwAStH_GXBgUVFxC93CCsbBM5MSA-Piw"
 app = Client( TOKAN ,605563,"7f2c2d12880400b88764b9b304e14e0b")
 bullet = -1001378725482
 ferrari = -1001274887387 
-@app.on_message(Filters.chat(bullet) & ~ Filters.edited)
-def main(client, message):
- file = open("bullet.txt" , "r")
- lines = file.readlines()
- file.close()
- for line in lines:
-  p = line.split()
-  for s in p:
-   try:
-    mes = client.send_message( int(s), "**" + message.text + "**" )
-    fille = open(str(s)+".txt","r")
-    n = fille.readlines()
-    fille.close()
-    for t in n:
-     fie = open(str(s)+".txt","w")
-     fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
-     fie.close()
-   except:
-    continue
+
 
 @app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
 def main(client, message):
@@ -42,6 +24,26 @@ def main(client, message):
      fie.close()
    except:
     continue
+@app.on_message(Filters.chat(bullet) & ~ Filters.edited)
+def main(client, message):
+ file = open("bullet.txt" , "r")
+ lines = file.readlines()
+ file.close()
+ for line in lines:
+  p = line.split()
+  for s in p:
+   try:
+    mes = client.send_message( int(s), "**" + message.text + "**" )
+    fille = open(str(s)+".txt","r")
+    n = fille.readlines()
+    fille.close()
+    for t in n:
+     fie = open(str(s)+".txt","w")
+     fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
+     fie.close()
+   except:
+    continue
+
 @app.on_message(Filters.chat(ferrari) & Filters.edited)
 def main(client, message):
  file = open("ferrari.txt" , "r")
