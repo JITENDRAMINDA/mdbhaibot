@@ -1,5 +1,5 @@
 from pyrogram import Client, Filters
-app = Client("866448484:AAGW31xjmo4xX2zdFbnrM5OVR2EJmaBWfAE",869912,"a7b049e08df35464047d57e5134327e5")
+app = Client("866448484:AAFKXWQy5mdnKragYiLvt8N7m2IUmadCy9k",869912,"a7b049e08df35464047d57e5134327e5")
 bullet = -1001378725482
 ferrari = -1001274887387 
 
