@@ -1,8 +1,29 @@
 from pyrogram import Client, Filters
-app = Client("866448484:AAFKXWQy5mdnKragYiLvt8N7m2IUmadCy9k",869912,"a7b049e08df35464047d57e5134327e5")
+app = Client("809686330:AAHz_Ca1IwD-9Ad9-YKKE3xfgfyseIAkDco",869912,"a7b049e08df35464047d57e5134327e5")
 bullet = -1001378725482
 ferrari = -1001274887387 
 
+
+
+@app.on_message(Filters.chat(bullet) & ~ Filters.edited)
+def main(client, message):
+ file = open("bullet.txt" , "r")
+ lines = file.readlines()
+ file.close()
+ for line in lines:
+  p = line.split()
+  for s in p:
+   try:
+    mes = client.send_message( int(s), "**" + message.text + "**" )
+    fille = open(str(s)+".txt","r")
+    n = fille.readlines()
+    fille.close()
+    for t in n:
+     fie = open(str(s)+".txt","w")
+     fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
+     fie.close()
+   except:
+    continue
 
 @app.on_message(Filters.chat(ferrari) & ~ Filters.edited)
 def main(client, message):
@@ -19,25 +40,6 @@ def main(client, message):
     fille.close()
     for t in n:
      fie = open(str(r)+".txt","w")
-     fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
-     fie.close()
-   except:
-    continue
-@app.on_message(Filters.chat(bullet) & ~ Filters.edited)
-def main(client, message):
- file = open("bullet.txt" , "r")
- lines = file.readlines()
- file.close()
- for line in lines:
-  p = line.split()
-  for s in p:
-   try:
-    mes = client.send_message( int(s), "**" + message.text + "**" )
-    fille = open(str(s)+".txt","r")
-    n = fille.readlines()
-    fille.close()
-    for t in n:
-     fie = open(str(s)+".txt","w")
      fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
      fie.close()
    except:
