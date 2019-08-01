@@ -15,13 +15,9 @@ def main(client, message):
   for s in p:
    try:
     mes = client.send_message( int(s), "**" + message.text + "**" )
-    fille = open(str(s)+".txt","r")
-    n = fille.readlines()
-    fille.close()
-    for t in n:
-     fie = open(str(s)+".txt","w")
-     fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
-     fie.close()
+    fie = open(str(s)+".txt","a")
+    fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
+    fie.close()
    except:
     continue
 
@@ -35,13 +31,9 @@ def main(client, message):
   for r in p: 
    try:
     mes = client.send_message( int(r), "**" + message.text + "**" )
-    fille = open(str(r)+".txt","r")
-    n = fille.readlines()
-    fille.close()
-    for t in n:
-     fie = open(str(r)+".txt","w")
-     fie.write(t +" " + str(message.message_id) + " " + str(mes.message_id))
-     fie.close()
+    fie = open(str(r)+".txt","a")
+    fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
+    fie.close()
    except:
     continue
 
